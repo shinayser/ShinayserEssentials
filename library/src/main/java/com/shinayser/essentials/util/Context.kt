@@ -1,8 +1,14 @@
 package com.shinayser.essentials.util
 
+import android.R
 import android.content.Context
+import android.content.DialogInterface
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
+import android.widget.ArrayAdapter
 import org.jetbrains.anko.bundleOf
 
 /**
@@ -17,3 +23,59 @@ fun Fragment.fragmentOf(fragmentName: String, bundle: Bundle? = null): Fragment 
 fun Fragment.fragmentOf(fragmentName: String, vararg pairs: Pair<String, Any>) = fragmentOf(fragmentName, bundleOf(*pairs))
 inline fun <reified T> Fragment.fragmentOf(vararg pairs: Pair<String, Any>): T = fragmentOf(T::class.java.name, bundleOf(*pairs)) as T
 inline fun <reified T> Fragment.fragmentOf(bundle: Bundle? = null): T = fragmentOf(T::class.java.name, bundle) as T
+
+//Preferences
+fun Context.getStringPreference(preference: String, defaultValue: String? = null): String? = PreferenceManager.getDefaultSharedPreferences(this).getString(preference, defaultValue)
+fun Context.getIntPreference(preference: String, defaultValue: Int = -1): Int = PreferenceManager.getDefaultSharedPreferences(this).getInt(preference, defaultValue)
+fun Context.getBooleanPreference(preference: String, defaultValue: Boolean = false): Boolean = PreferenceManager.getDefaultSharedPreferences(this).getBoolean(preference, defaultValue)
+fun Context.getLongPreference(preference: String, defaultValue: Long = -1L): Long = PreferenceManager.getDefaultSharedPreferences(this).getLong(preference, defaultValue)
+fun Context.saveStringPreference(preference: String, value: String?) = PreferenceManager.getDefaultSharedPreferences(this).edit().putString(preference, value).commit()
+fun Context.saveIntPreference(preference: String, value: Int) = PreferenceManager.getDefaultSharedPreferences(this).edit().putInt(preference, value).commit()
+fun Context.saveBooleanPreference(preference: String, value: Boolean) = PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(preference, value).commit()
+fun Context.saveLongPreference(preference: String, value: Long) = PreferenceManager.getDefaultSharedPreferences(this).edit().putLong(preference, value).commit()
+
+
+
+//Dialogs
+fun Context.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
+    AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMultiChoiceItems(itens, checkedItens, listener)
+//            .setPositiveButton(R.string.ok) {
+//                dialog, which ->
+//                dialog.dismiss()
+//            }
+            .show()
+}
+
+fun Context.showSingleSelectDialog(title: String? = null, itens: Array<String>, checkedItem: Int, listener: (dialog: DialogInterface, which: Int) -> Unit) {
+    AlertDialog.Builder(this)
+            .setTitle(title)
+            .setSingleChoiceItems(itens, checkedItem, listener)
+            .setPositiveButton(R.string.ok) { dialog, which ->
+                dialog.dismiss()
+            }
+            .show()
+}
+
+
+//Other
+fun Context.getVersionName(): String? {
+    try {
+        return this.packageManager.getPackageInfo(this.packageName, 0).versionName
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+    }
+
+    return null
+}
+
+fun Context.getVersionCode(): Int {
+    try {
+        return this.packageManager.getPackageInfo(this.packageName, 0).versionCode
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+    }
+
+    return -1
+}
