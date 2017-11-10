@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shinayer.essentials">
+    package="com.shinayser.essentials">
 
     <application
         android:allowBackup="true"
