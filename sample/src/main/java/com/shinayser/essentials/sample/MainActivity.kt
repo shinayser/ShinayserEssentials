@@ -12,10 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         textView.text = jsonOf(
-                randomName() to randomInt(10),
-                randomName() to randomLong(1000),
-                randomName() to randomDate(),
+                randomName() to jsonArrayOf(randomInt(10), randomInt(10)),
+                randomName() to randomLong(),
+                randomName() to randomCalendar(),
                 randomName() to randomFrom("First", "Second", "Third"),
                 randomName() to Calendar.getInstance().apply {
                     year = 1999
