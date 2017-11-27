@@ -27,44 +27,62 @@ fun jsonArrayOf(vararg itens: Any) = JSONArray().apply {
     }
 }
 
+
+fun JSONObject.getJsonArrayOrNull(name: String) = this.optJSONArray(name)
+fun JSONObject.getJsonObjectOrNull(name: String) = this.optJSONObject(name)
 fun JSONObject.getStringOrNull(name: String) = try {
     this.getString(name)
 } catch (e: JSONException) {
     null
 }
-
 fun JSONObject.getIntOrNull(name: String) = try {
     this.getInt(name)
 } catch (e: JSONException) {
     null
 }
-
 fun JSONObject.getDoubleOrNull(name: String) = try {
     this.getDouble(name)
 } catch (e: JSONException) {
     null
 }
-
 fun JSONObject.getLongOrNull(name: String) = try {
     this.getLong(name)
 } catch (e: JSONException) {
     null
 }
-
 fun JSONObject.getBooleanOrNull(name: String) = try {
     this.getBoolean(name)
 } catch (e: JSONException) {
     null
 }
 
-fun JSONObject.getJsonArrayOrNull(name: String) = try {
-    this.getJSONArray(name)
+
+
+//JsonArray
+fun JSONArray.getJsonArrayOrNull(index: Int) = this.optJSONArray(index)
+fun JSONArray.getJsonObjectOrNull(index: Int) = this.optJSONObject(index)
+fun JSONArray.getStringOrNull(index: Int) = try {
+    this.getString(index)
 } catch (e: JSONException) {
     null
 }
-
-fun JSONObject.getJsonObjectOrNull(name: String) = try {
-    this.getJSONObject(name)
+fun JSONArray.getIntOrNull(index: Int) = try {
+    this.getInt(index)
+} catch (e: JSONException) {
+    null
+}
+fun JSONArray.getDoubleOrNull(index: Int) = try {
+    this.getDouble(index)
+} catch (e: JSONException) {
+    null
+}
+fun JSONArray.getLongOrNull(index: Int) = try {
+    this.getLong(index)
+} catch (e: JSONException) {
+    null
+}
+fun JSONArray.getBooleanOrNull(index: Int) = try {
+    this.getBoolean(index)
 } catch (e: JSONException) {
     null
 }
