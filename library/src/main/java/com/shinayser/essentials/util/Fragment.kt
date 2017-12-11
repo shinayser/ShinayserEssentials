@@ -36,22 +36,4 @@ inline fun <reified T : DialogFragment> Fragment.showDialogFragment(bundle: Bund
     fragmentOf<T>(bundle).show(activity.supportFragmentManager, T::class.java.name)
 }
 
-inline fun Fragment.childFragmentTransaction(block: FragmentTransaction.() -> Any): FragmentManager {
-    childFragmentManager.onTransaction(block)
-    return childFragmentManager
-}
 
-inline fun Fragment.childFragmentTransactionNow(block: FragmentTransaction.() -> Any): FragmentManager {
-    childFragmentManager.onTransactionNow(block)
-    return childFragmentManager
-}
-
-inline fun Fragment.childFragmentTransactionAllowingStateLoss(block: FragmentTransaction.() -> Any): FragmentManager {
-    childFragmentManager.onTransactionAllowingStateLoss(block)
-    return childFragmentManager
-}
-
-inline fun Fragment.childFragmentTransactionNowAllowingStateLoss(block: FragmentTransaction.() -> Any): FragmentManager {
-    childFragmentManager.onTransactionNowAllowingStateLoss(block)
-    return childFragmentManager
-}

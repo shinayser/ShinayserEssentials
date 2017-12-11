@@ -3,8 +3,7 @@ package com.shinayser.essentials.util
 import android.app.Activity
 import android.os.Bundle
 import android.os.Parcelable
-import android.support.v4.app.DialogFragment
-import android.support.v4.app.FragmentActivity
+import android.support.v4.app.*
 import org.jetbrains.anko.bundleOf
 
 /**
@@ -35,3 +34,4 @@ inline fun <reified T : DialogFragment> FragmentActivity.showDialogFragment(vara
 inline fun <reified T : DialogFragment> FragmentActivity.showDialogFragment(bundle: Bundle? = null) {
     fragmentOf<T>(bundle).show(supportFragmentManager, T::class.java.name)
 }
+

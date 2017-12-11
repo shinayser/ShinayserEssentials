@@ -86,3 +86,5 @@ fun JSONArray.getBooleanOrNull(index: Int) = try {
 } catch (e: JSONException) {
     null
 }
+
+fun JSONArray.iterate() = (0 until this.length())
