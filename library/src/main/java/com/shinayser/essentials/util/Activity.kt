@@ -1,6 +1,8 @@
 package com.shinayser.essentials.util
 
 import android.app.Activity
+import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.os.Parcelable
 import android.support.v4.app.*
@@ -35,3 +37,6 @@ inline fun <reified T : DialogFragment> FragmentActivity.showDialogFragment(bund
     fragmentOf<T>(bundle).show(supportFragmentManager, T::class.java.name)
 }
 
+fun <T : ViewDataBinding> Activity.bindContentView(res: Int): T {
+    return DataBindingUtil.setContentView(this, res)
+}

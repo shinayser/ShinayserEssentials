@@ -3,6 +3,8 @@ package com.shinayser.essentials.sample
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.TextView
+import com.daimajia.androidanimations.library.Techniques
 import com.shinayser.essentials.util.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
@@ -34,6 +36,12 @@ class MainActivity : AppCompatActivity() {
                 putExtra( "extraPeople", People("Daniel", "Oliveira"))
             })
             finish()
+        }
+
+        findViewById<TextView>(R.id.ALT).yoyoAnimation(Techniques.ZoomOut){
+            atEnd {
+
+            }
         }
 
     }
