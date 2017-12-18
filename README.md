@@ -17,3 +17,24 @@ Add to your Gradle file:
 Then add this to your "depedencies":
    
     implementation 'com.github.shinayser:ShinayserEssentials:1.4.1'
+
+# YoYo library DSL
+
+    /*The duration parameter is optional, default is 300.*/
+    anyView.yoyoAnimation(Techniques.FadeIn, duration = 400) {
+                        atEnd {
+                            //Do code at End
+                        }
+
+                        atStart {
+                            //Do code at start
+                        }
+
+                        atCancel{
+                            //Do code when cancel
+                        }
+
+                        atRepeat{
+                            //Do code when repeat
+                        }
+                    }
