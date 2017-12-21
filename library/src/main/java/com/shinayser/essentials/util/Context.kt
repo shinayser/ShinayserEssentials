@@ -35,30 +35,6 @@ fun Context.saveBooleanPreference(preference: String, value: Boolean) = Preferen
 fun Context.saveLongPreference(preference: String, value: Long) = PreferenceManager.getDefaultSharedPreferences(this).edit().putLong(preference, value).commit()
 
 
-
-//Dialogs
-fun Context.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
-    AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMultiChoiceItems(itens, checkedItens, listener)
-//            .setPositiveButton(R.string.ok) {
-//                dialog, which ->
-//                dialog.dismiss()
-//            }
-            .show()
-}
-
-fun Context.showSingleSelectDialog(title: String? = null, itens: Array<String>, checkedItem: Int, listener: (dialog: DialogInterface, which: Int) -> Unit) {
-    AlertDialog.Builder(this)
-            .setTitle(title)
-            .setSingleChoiceItems(itens, checkedItem, listener)
-            .setPositiveButton(R.string.ok) { dialog, which ->
-                dialog.dismiss()
-            }
-            .show()
-}
-
-
 //Other
 fun Context.getVersionName(): String? {
     try {
