@@ -18,6 +18,20 @@ Then add this to your "depedencies":
    
     implementation 'com.github.shinayser:ShinayserEssentials:1.5.0'
 
+# Json creation DSL
+
+    /*The duration parameter is optional, default is 300.*/
+    val jsonObject = jsonOf {
+            "Integer" oto 3
+            "Double" oto 3.5
+            "Float" oto 3.5f
+            "Array" oto jsonArrayOf(1, 2, "Just A string")
+            "Another object" oto jsonOf {
+                "A long value" oto 3L
+            }
+        }
+
+
 # YoYo library DSL
 
     /*The duration parameter is optional, default is 300.*/
