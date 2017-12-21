@@ -23,7 +23,8 @@ fun jsonArrayOf(vararg itens: Any) = JSONArray().apply {
     itens.forEach {
         try {
             put(it)
-        } catch (e: Exception) { }
+        } catch (e: Exception) {
+        }
     }
 }
 
@@ -35,21 +36,25 @@ fun JSONObject.getStringOrNull(name: String) = try {
 } catch (e: JSONException) {
     null
 }
+
 fun JSONObject.getIntOrNull(name: String) = try {
     this.getInt(name)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONObject.getDoubleOrNull(name: String) = try {
     this.getDouble(name)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONObject.getLongOrNull(name: String) = try {
     this.getLong(name)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONObject.getBooleanOrNull(name: String) = try {
     this.getBoolean(name)
 } catch (e: JSONException) {
@@ -57,30 +62,34 @@ fun JSONObject.getBooleanOrNull(name: String) = try {
 }
 
 
-
 //JsonArray
 fun JSONArray.getJsonArrayOrNull(index: Int) = this.optJSONArray(index)
+
 fun JSONArray.getJsonObjectOrNull(index: Int) = this.optJSONObject(index)
 fun JSONArray.getStringOrNull(index: Int) = try {
     this.getString(index)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONArray.getIntOrNull(index: Int) = try {
     this.getInt(index)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONArray.getDoubleOrNull(index: Int) = try {
     this.getDouble(index)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONArray.getLongOrNull(index: Int) = try {
     this.getLong(index)
 } catch (e: JSONException) {
     null
 }
+
 fun JSONArray.getBooleanOrNull(index: Int) = try {
     this.getBoolean(index)
 } catch (e: JSONException) {
@@ -88,3 +97,25 @@ fun JSONArray.getBooleanOrNull(index: Int) = try {
 }
 
 fun JSONArray.iterate() = (0 until this.length())
+
+
+class JSONObjectBuilder {
+
+    var jsonObject = JSONObject()
+
+    infix fun String.oto(value: Any) = this@JSONObjectBuilder.apply {
+        jsonObject.put(this@oto, value)
+    }
+
+    fun build() = jsonObject
+
+}
+
+
+fun jsonOf(block: JSONObjectBuilder.() -> Unit): JSONObject {
+
+    var builder = JSONObjectBuilder()
+    builder.block()
+    return builder.build()
+
+}

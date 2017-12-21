@@ -16,7 +16,7 @@ Add to your Gradle file:
 
 Then add this to your "depedencies":
    
-    implementation 'com.github.shinayser:ShinayserEssentials:1.4.1'
+    implementation 'com.github.shinayser:ShinayserEssentials:1.5.0'
 
 # YoYo library DSL
 
