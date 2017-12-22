@@ -35,12 +35,16 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-    implementation "org.jetbrains.anko:anko-commons:0.10.1"
-    implementation "org.jetbrains.anko:anko-support-v4-commons:0.10.1"
 
     //Yoyo animation
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.2@aar'
+
+
+    //Kotlin
+    compile "org.jetbrains.anko:anko-commons:0.10.1"
+    compile "org.jetbrains.anko:anko-support-v4-commons:0.10.1"
+    compile 'com.mcxiaoke.koi:core:0.5.4' // A lot of kotlin utils
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
