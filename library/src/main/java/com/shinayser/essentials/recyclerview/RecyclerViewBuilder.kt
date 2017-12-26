@@ -2,6 +2,7 @@ package com.shinayser.essentials.recyclerview
 
 import android.content.Context
 import android.databinding.ViewDataBinding
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.shinayser.essentials.R
+import com.shinayser.essentials.util.fromResDrawableTinted
 import com.shinayser.essentials.util.fromResInteger
 import org.jetbrains.anko.displayMetrics
 
@@ -33,6 +35,10 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
             }
 
         }
+    }
+
+    fun colorDivider(color: Int = Color.BLACK) {
+        divider = R.drawable.divider_drawable.fromResDrawableTinted(recycler.context, color)
     }
 
     fun build() {
@@ -61,11 +67,11 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
                     recycler.layoutManager = GridLayoutManager(context, gridType.spanCount!!)
 
                     divider?.let {
-                        if (gridType.spanCount!! > 1) {
-                            recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
-                        } else {
-                            recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
-                        }
+                        //                        if (gridType.spanCount!! > 1) {
+//                            recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
+//                        } else {
+                        recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
+//                        }
                     }
 
                 } else {
@@ -73,11 +79,11 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
                     recycler.layoutManager = GridLayoutManager(context, spanCount)
 
                     divider?.let {
-                        if (spanCount > 1) {
-                            recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
-                        } else {
-                            recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
-                        }
+                        //                        if (spanCount > 1) {
+//                            recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
+//                        } else {
+                        recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
+//                        }
                     }
 
                 }
@@ -90,11 +96,11 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
                 recycler.layoutManager = GridLayoutManager(context, spanCount)
 
                 divider?.let {
-                    if (spanCount > 1) {
-                        recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
-                    } else {
-                        recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
-                    }
+                    //                    if (spanCount > 1) {
+//                        recycler.addItemDecoration(LineDividerItemDecoration_grid(context, it))
+//                    } else {
+                    recycler.addItemDecoration(LineDividerItemDecoration_list(context, it))
+//                    }
                 }
 
             }
@@ -124,6 +130,7 @@ sealed class RecyclerLayoutType
 class Linear : RecyclerLayoutType()
 data class DefaultGrid(var multiplier: Int = 1) : RecyclerLayoutType()
 data class CustomSpanGrid(var spanCount: Int? = null) : RecyclerLayoutType()
+
 
 abstract class SimpleRecyclerAdapter<ITEM, BINDER : ViewDataBinding>(
         val context: Context,
