@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         val recyler = findViewById<RecyclerView>(R.id.recycler)
 
-
         val listOfPeople = listOfRandoms(50) {
             People(randomName(), randomName())
         }

@@ -28,7 +28,7 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
     var divider: Drawable? = null
 
     fun <ITEM, BINDER : ViewDataBinding> onBindViewHolder(itemLayoutRes: Int, list: MutableList<ITEM>, f: (item: ITEM, holder: SimpleViewHolder<BINDER>) -> Unit) {
-        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context.applicationContext, itemLayoutRes, list) {
+        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context, itemLayoutRes, list) {
 
             override fun onBind(item: ITEM, holder: SimpleViewHolder<BINDER>) {
                 f(item, holder)
@@ -42,7 +42,7 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
     }
 
     fun build() {
-        val context = recycler.context.applicationContext
+        val context = recycler.context
 
         //Spacing///////////////////////////////////////////////////////////////////////////////////
         if (spacing > 0) {
