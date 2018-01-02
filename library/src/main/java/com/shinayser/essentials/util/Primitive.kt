@@ -44,7 +44,7 @@ fun Float.greaterThan(n : Float) = this > n
 fun Float.greaterThanOrEqual(n : Float) = this >= n
 
 //Integer resources quick convertion
-fun Int.fromResString(context: Context, vararg params: Any) = if (params.isEmpty()) context.getString(this) else context.getString(this, params)
+fun Int.fromResString(context: Context, vararg params: Any) = if (params.isEmpty()) context.getString(this) else context.getString(this, *params)
 fun Int.fromResInteger(context: Context) = context.resources.getInteger(this)
 fun Int.fromResColor(context: Context) = context.resources.getColor(this)
 fun Int.fromResDimen(context: Context) = context.resources.getDimension(this)
