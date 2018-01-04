@@ -20,7 +20,6 @@ Then add this to your "depedencies":
 
 # Json creation DSL
 
-    /*The duration parameter is optional, default is 300.*/
     val jsonObject = jsonOf {
             "Integer" oto 3
             "Double" oto 3.5
