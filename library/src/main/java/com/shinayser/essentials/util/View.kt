@@ -10,17 +10,9 @@ import android.widget.*
 /**
  * Created by denox on 10/11/2017.
  */
-fun View.visible() {
-    this.visibility = View.VISIBLE
-}
-
-fun View.gone() {
-    this.visibility = View.GONE
-}
-
-fun View.invisible() {
-    this.visibility = View.INVISIBLE
-}
+fun View.visible() { visibility = View.VISIBLE }
+fun View.gone() { visibility = View.GONE }
+fun View.invisible() { visibility = View.INVISIBLE }
 
 fun View.findTextView(resId: Int): TextView = findViewById(resId)
 fun View.findEditText(resId: Int): EditText = findViewById(resId)

@@ -101,7 +101,7 @@ fun JSONArray.iterate() = (0 until this.length())
 
 class JSONObjectBuilder {
 
-    var jsonObject = JSONObject()
+    private var jsonObject = JSONObject()
 
     infix fun String.oto(value: Any) = this@JSONObjectBuilder.apply {
         jsonObject.put(this@oto, value)
@@ -112,10 +112,7 @@ class JSONObjectBuilder {
 }
 
 
-fun jsonOf(block: JSONObjectBuilder.() -> Unit): JSONObject {
-
-    var builder = JSONObjectBuilder()
-    builder.block()
-    return builder.build()
-
+fun jsonOf(block: JSONObjectBuilder.() -> Unit): JSONObject = JSONObjectBuilder().let {
+    it.block()
+    it.build()
 }

@@ -90,7 +90,7 @@ fun <T> listOfRandoms(listSize: Int = 10, randomObject: () -> T) = mutableListOf
     }
 }
 fun <T> listOfRandomsIndexed(listSize: Int = 10, randomObject: (Int) -> T) = mutableListOf<T>().apply {
-    repeat(listSize) {
-        add(randomObject(it))
+    repeat(listSize) { index ->
+        add(randomObject(index))
     }
 }

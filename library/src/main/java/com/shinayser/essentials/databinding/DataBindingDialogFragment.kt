@@ -14,7 +14,7 @@ import android.view.Window
  * Created by denox on 18/11/2016.
  */
 
-abstract class DataBindingDialogFragment<T : ViewDataBinding> : DialogFragment() {
+abstract class DataBindingDialogFragment<T : ViewDataBinding>() : DialogFragment() {
 
     protected lateinit var mBind: T
 
