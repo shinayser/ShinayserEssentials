@@ -37,3 +37,8 @@ fun View.propertyAnimation(property: String, duration: Long, fromValue: Int, toV
     listener?.let { objectAnimation.addListener(listener) }
     objectAnimation.start()
 }
+
+
+fun View.postDelayed(time: Long, lambda: () -> Unit) {
+    postDelayed(lambda, time)
+}
