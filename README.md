@@ -16,7 +16,7 @@ Add to your Gradle file:
 
 Then add this to your "depedencies":
    
-    implementation 'com.github.shinayser:ShinayserEssentials:1.7.1'
+    implementation 'com.github.shinayser:ShinayserEssentials:1.7.2'
 
 # Json creation DSL
 

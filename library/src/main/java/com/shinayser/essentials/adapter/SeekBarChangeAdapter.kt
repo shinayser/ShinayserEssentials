@@ -8,7 +8,7 @@ import android.widget.SeekBar
 
 class SeekBarChangeAdapter : SeekBar.OnSeekBarChangeListener {
 
-    private var onProgressChanged : ((seekBar: SeekBar?, progress: Int, fromUser: Boolean) -> Boolean)? = null
+    private var onProgressChanged : ((seekBar: SeekBar?, progress: Int, fromUser: Boolean) -> Unit)? = null
     private var onStartTrackingTouch : ((seekBar: SeekBar?) -> Unit)? = null
     private var onStopTrackingTouch : ((seekBar: SeekBar?) -> Unit)? = null
 
@@ -25,7 +25,7 @@ class SeekBarChangeAdapter : SeekBar.OnSeekBarChangeListener {
     }
 
 
-    fun onProgressChanged( lambda : (seekBar: SeekBar?, progress: Int, fromUser: Boolean) -> Boolean){
+    fun onProgressChanged( lambda : (seekBar: SeekBar?, progress: Int, fromUser: Boolean) -> Unit){
         onProgressChanged = lambda
     }
 
