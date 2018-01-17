@@ -32,6 +32,8 @@ class FinishTypingTextWatcher(private val delay: Long, val listener: FinishedTyp
 
 }
 
-fun EditText.onFinishedTyping(delay: Long = 600, listener: FinishedTypingListener) {
-    this.addTextChangedListener(FinishTypingTextWatcher(delay, listener))
+fun EditText.onFinishedTyping(delay: Long = 600, listener: FinishedTypingListener) : FinishTypingTextWatcher {
+    return FinishTypingTextWatcher(delay, listener).also {
+        this.addTextChangedListener(it)
+    }
 }
