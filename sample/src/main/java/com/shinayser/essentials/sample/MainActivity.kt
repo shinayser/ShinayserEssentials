@@ -1,15 +1,19 @@
 package com.shinayser.essentials.sample
 
+import android.database.Cursor
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.content.CursorLoader
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
-import android.widget.ImageView
-import com.shinayser.essentials.adapter.seekBarChangeAdapter
+import com.shinayser.essentials.loader.createLoader
 import com.shinayser.essentials.recyclerview.DefaultGrid
 import com.shinayser.essentials.recyclerview.init
 import com.shinayser.essentials.sample.databinding.ItemViewBinding
-import com.shinayser.essentials.util.*
+import com.shinayser.essentials.util.listOfRandoms
+import com.shinayser.essentials.util.optionalSerializable
+import com.shinayser.essentials.util.randomFrom
+import com.shinayser.essentials.util.randomName
 import kotlinx.android.synthetic.main.item_view.view.*
 import java.io.Serializable
 
@@ -46,6 +50,20 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+
+        supportLoaderManager.initLoader(0, null, createLoader<Cursor> {
+
+            loaderCreation { id, args -> CursorLoader(this@MainActivity) }
+
+            loadFinished { loader, data ->
+
+
+
+            }
+
+
+        })
 
 
     }
