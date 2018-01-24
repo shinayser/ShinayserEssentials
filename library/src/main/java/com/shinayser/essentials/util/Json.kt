@@ -5,7 +5,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 fun JSONObject.map(vararg pairs: Pair<String, Any?>) {
     pairs.forEach {

@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 /**
- * Created by denox on 18/11/2016.
+ * Created by Daniel Oliveira on 18/11/2016.
  */
 
 abstract class DataBindingFragment<T : ViewDataBinding>(private var retainThisInstance : Boolean = true) : Fragment() {

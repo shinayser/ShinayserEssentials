@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.*
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 fun View.visible() {
     visibility = View.VISIBLE

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
 
 /**
- * Created by denox on 26/02/2016.
+ * Created by Daniel Oliveira on 26/02/2016.
  */
 open class LineDividerItemDecoration_list(context: Context, val separator: Drawable) : RecyclerView.ItemDecoration() {
 

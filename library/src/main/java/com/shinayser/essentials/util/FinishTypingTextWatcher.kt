@@ -7,7 +7,7 @@ import android.widget.EditText
 import com.mcxiaoke.koi.ext.cancelAll
 
 /**
- * Created by denox on 18/12/2017.
+ * Created by Daniel Oliveira on 18/12/2017.
  */
 typealias FinishedTypingListener = (String) -> Unit
 

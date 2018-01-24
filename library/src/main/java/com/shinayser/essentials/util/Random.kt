@@ -3,7 +3,7 @@ package com.shinayser.essentials.util
 import java.util.*
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 
 private object Names {

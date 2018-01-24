@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.view.Window
 
 /**
- * Created by denox on 18/11/2016.
+ * Created by Daniel Oliveira on 18/11/2016.
  */
 
 abstract class DataBindingDialogFragment<T : ViewDataBinding>() : DialogFragment() {

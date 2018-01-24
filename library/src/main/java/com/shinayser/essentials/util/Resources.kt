@@ -5,7 +5,7 @@ import android.util.TypedValue
 import com.shinayser.essentials.R
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 fun Resources.Theme.getPrimaryColor(): Int {
     val typedValue = TypedValue()

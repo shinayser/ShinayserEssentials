@@ -9,7 +9,7 @@ import android.support.v4.app.*
 import org.jetbrains.anko.bundleOf
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 
 //Delegates

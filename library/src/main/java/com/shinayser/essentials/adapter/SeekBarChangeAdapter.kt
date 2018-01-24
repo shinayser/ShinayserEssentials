@@ -3,7 +3,7 @@ package com.shinayser.essentials.adapter
 import android.widget.SeekBar
 
 /**
- * Created by denox on 12/01/2018.
+ * Created by Daniel Oliveira on 12/01/2018.
  */
 
 class SeekBarChangeAdapter : SeekBar.OnSeekBarChangeListener {

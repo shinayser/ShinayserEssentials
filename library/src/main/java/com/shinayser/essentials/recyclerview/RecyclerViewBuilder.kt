@@ -17,7 +17,7 @@ import com.shinayser.essentials.util.fromResInteger
 import org.jetbrains.anko.displayMetrics
 
 /**
- * Created by denox on 22/12/2017.
+ * Created by Daniel Oliveira on 22/12/2017.
  */
 class RecyclerViewBuilder(private var recycler: RecyclerView) {
 

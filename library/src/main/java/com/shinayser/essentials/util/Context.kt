@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter
 import org.jetbrains.anko.bundleOf
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 //Fragment creation
 fun Context.fragmentOf(fragmentName: String, bundle: Bundle? = null): Fragment = Fragment.instantiate(this, fragmentName, bundle)

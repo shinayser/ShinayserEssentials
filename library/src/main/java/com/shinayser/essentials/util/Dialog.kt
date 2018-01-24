@@ -8,7 +8,7 @@ import android.support.v7.app.AlertDialog
 import android.widget.ArrayAdapter
 
 /**
- * Created by denox on 19/12/2017.
+ * Created by Daniel Oliveira on 19/12/2017.
  */
 fun Fragment.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
     activity.showMultiselectDialog(title, itens, checkedItens, listener)

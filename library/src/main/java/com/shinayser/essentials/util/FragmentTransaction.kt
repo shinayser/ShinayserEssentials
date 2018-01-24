@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 inline fun <reified T> FragmentManager.find() = findFragmentByTag(T::class.java.name) as T
 

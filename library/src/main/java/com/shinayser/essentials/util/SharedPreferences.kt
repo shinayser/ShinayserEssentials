@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.SharedPreferences
 
 /**
- * Created by denox on 19/12/2017.
+ * Created by Daniel Oliveira on 19/12/2017.
  */
 
 @SuppressLint("ApplySharedPref")

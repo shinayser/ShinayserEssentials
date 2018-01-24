@@ -3,7 +3,7 @@ package com.shinayser.essentials.util
 import android.database.Cursor
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 fun Cursor.getStringOrNull(columnName: String): String? {
     return if (!this.isNull(this.getColumnIndex(columnName))) {

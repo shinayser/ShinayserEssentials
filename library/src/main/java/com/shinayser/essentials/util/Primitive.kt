@@ -5,7 +5,7 @@ import android.graphics.Color
 import org.json.JSONObject
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 fun String.toJson(): JSONObject? {
 

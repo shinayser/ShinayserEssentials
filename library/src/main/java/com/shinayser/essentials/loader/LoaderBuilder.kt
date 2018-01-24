@@ -6,7 +6,7 @@ import android.support.v4.app.LoaderManager
 import android.support.v4.content.Loader
 
         /**
-         * Created by denox on 19/01/2018.
+         * Created by Daniel Oliveira on 19/01/2018.
          */
 
 typealias LoaderCreation<TYPE> = (id: Int, args: Bundle?) -> Loader<TYPE>

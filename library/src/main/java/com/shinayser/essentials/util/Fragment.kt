@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager
 import org.jetbrains.anko.bundleOf
 
 /**
- * Created by denox on 10/11/2017.
+ * Created by Daniel Oliveira on 10/11/2017.
  */
 //Delegates
 fun Fragment.extraString(key: String) = lazy { if (arguments.containsKey(key)) arguments.getString(key) else null!! }

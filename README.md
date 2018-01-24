@@ -16,7 +16,34 @@ Add to your Gradle file:
 
 Then add this to your "depedencies":
    
-    implementation 'com.github.shinayser:ShinayserEssentials:1.8.0'
+    implementation 'com.github.shinayser:ShinayserEssentials:1.9.0'
+
+
+
+# Simplified Conditions DSL
+
+    //For api requirements use onLollipop, onNougat, onOreo...
+    
+    
+    onLollipop {    
+      //If lollipop...    
+    } otherwise {
+      //If not lollipop...       
+    }
+           
+    ifNotNull(1, 2, 3) {
+       //if All not null
+    } otherwise {
+       //Or esle...
+    }
+        
+    
+    ifAllNull(1, 2, null) {
+        //If all params are null...
+    } otherwise {
+        //Or else...
+    }
+    
 
 # Json creation DSL
 

@@ -5,7 +5,7 @@ import android.view.View
 import com.daimajia.androidanimations.library.YoYo
 
 /**
- * Created by denox on 15/12/2017.
+ * Created by Daniel Oliveira on 15/12/2017.
  */
 fun View.yoyoAnimation(technique: com.daimajia.androidanimations.library.Techniques, duration: Long = 300, listener: Animator.AnimatorListener? = null): View {
     if (listener != null) {
