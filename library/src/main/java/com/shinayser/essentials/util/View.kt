@@ -3,6 +3,7 @@ package com.shinayser.essentials.util
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.animation.TimeInterpolator
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.SwitchCompat
 import android.support.v7.widget.Toolbar
 import android.view.View
@@ -32,6 +33,8 @@ fun View.findCheckBox(resId: Int): CheckBox = findViewById(resId)
 fun View.findButton(resId: Int): Button = findViewById(resId)
 fun View.findImageButton(resId: Int): ImageButton = findViewById(resId)
 fun View.findToolbar(resId: Int): Toolbar = findViewById(resId)
+fun View.findSeekBar(resId: Int): SeekBar = findViewById(resId)
+fun View.findFloatingActionButton(resId: Int): FloatingActionButton = findViewById(resId)
 
 fun View.propertyAnimation(property: String, duration: Long, fromValue: Float, toValue: Float, interpolator: TimeInterpolator? = null, listener: Animator.AnimatorListener? = null) {
     val objectAnimation = ObjectAnimator.ofFloat(this, property, fromValue, toValue)
