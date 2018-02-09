@@ -107,6 +107,14 @@ class JSONObjectBuilder {
         jsonObject.put(this@oto, value)
     }
 
+    infix fun String.otopt(value: Any?) = this@JSONObjectBuilder.apply {
+
+        value?.let {
+            jsonObject.put(this@otopt, it)
+        }
+
+    }
+
     fun build() = jsonObject
 
 }
