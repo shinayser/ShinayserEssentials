@@ -26,9 +26,10 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
     var layoutAnimation = 0
     var adapter: RecyclerView.Adapter<*>? = null
     var divider: Drawable? = null
+    var hasStableIds : Boolean = true
 
     fun <ITEM, BINDER : ViewDataBinding> onBindViewHolder(itemLayoutRes: Int, list: MutableList<ITEM>, f: (item: ITEM, holder: SimpleViewHolder<BINDER>) -> Unit) {
-        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context, itemLayoutRes, list) {
+        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context, itemLayoutRes, list, hasStableIds) {
 
             override fun onBind(item: ITEM, holder: SimpleViewHolder<BINDER>) {
                 f(item, holder)
@@ -135,10 +136,11 @@ data class CustomSpanGrid(var spanCount: Int? = null) : RecyclerLayoutType()
 abstract class SimpleRecyclerAdapter<ITEM, BINDER : ViewDataBinding>(
         val context: Context,
         val viewRes: Int,
-        var list: MutableList<ITEM>) : RecyclerView.Adapter<SimpleViewHolder<BINDER>>() {
+        var list: MutableList<ITEM>,
+        val hasStableIds : Boolean = true) : RecyclerView.Adapter<SimpleViewHolder<BINDER>>() {
 
     init {
-        setHasStableIds(true)
+        setHasStableIds(hasStableIds)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SimpleViewHolder<BINDER> = SimpleViewHolder(View.inflate(context, viewRes, null))
