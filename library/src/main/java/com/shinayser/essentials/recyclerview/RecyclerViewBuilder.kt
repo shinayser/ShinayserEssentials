@@ -26,10 +26,11 @@ class RecyclerViewBuilder(private var recycler: RecyclerView) {
     var layoutAnimation = 0
     var adapter: RecyclerView.Adapter<*>? = null
     var divider: Drawable? = null
-    var hasStableIds : Boolean = true
+    var hasStableIds: Boolean = true
+    var uniqueViewByPosition: Boolean = false
 
     fun <ITEM, BINDER : ViewDataBinding> onBindViewHolder(itemLayoutRes: Int, list: MutableList<ITEM>, f: (item: ITEM, holder: SimpleViewHolder<BINDER>) -> Unit) {
-        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context, itemLayoutRes, list, hasStableIds) {
+        adapter = object : SimpleRecyclerAdapter<ITEM, BINDER>(recycler.context, itemLayoutRes, list, hasStableIds, uniqueViewByPosition) {
 
             override fun onBind(item: ITEM, holder: SimpleViewHolder<BINDER>) {
                 f(item, holder)
@@ -137,7 +138,8 @@ abstract class SimpleRecyclerAdapter<ITEM, BINDER : ViewDataBinding>(
         val context: Context,
         val viewRes: Int,
         var list: MutableList<ITEM>,
-        val hasStableIds : Boolean = true) : RecyclerView.Adapter<SimpleViewHolder<BINDER>>() {
+        val hasStableIds: Boolean = true,
+        val uniqueViewByPosition: Boolean = false) : RecyclerView.Adapter<SimpleViewHolder<BINDER>>() {
 
     init {
         setHasStableIds(hasStableIds)
@@ -152,6 +154,13 @@ abstract class SimpleRecyclerAdapter<ITEM, BINDER : ViewDataBinding>(
     }
 
     override fun getItemId(position: Int) = list[position]?.hashCode()?.toLong() ?: 0
+
+    override fun getItemViewType(position: Int): Int =
+            if (uniqueViewByPosition) {
+                position
+            } else {
+                super.getItemViewType(position)
+            }
 
     abstract fun onBind(item: ITEM, holder: SimpleViewHolder<BINDER>)
 
