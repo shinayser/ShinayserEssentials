@@ -12,10 +12,10 @@ import org.jetbrains.anko.bundleOf
  */
 //Delegates
 fun Fragment.extraString(key: String) = lazy { if (arguments.containsKey(key)) arguments.getString(key) else null!! }
-
 fun Fragment.extraBoolean(key: String) = lazy { if (arguments.containsKey(key)) arguments.getBoolean(key) else null!! }
 fun Fragment.extraDouble(key: String) = lazy { if (arguments.containsKey(key)) arguments.getDouble(key) else null!! }
 fun Fragment.extraLong(key: String) = lazy { if (arguments.containsKey(key)) arguments.getLong(key) else null!! }
+fun Fragment.extraInt(key: String) = lazy { if (arguments.containsKey(key)) arguments.getInt(key) else null!! }
 fun Fragment.extraBundle(key: String) = lazy { arguments.getBundle(key)!! }
 fun <T : Parcelable> Fragment.extraParcelable(key: String) = lazy { arguments.getParcelable<T>(key)!! }
 fun <T> Fragment.extraSerializable(key: String) = lazy { (arguments.getSerializable(key) as T)!! }
