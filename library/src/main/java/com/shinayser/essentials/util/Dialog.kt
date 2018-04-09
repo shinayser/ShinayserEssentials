@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter
  * Created by Daniel Oliveira on 19/12/2017.
  */
 fun Fragment.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
-    activity.showMultiselectDialog(title, itens, checkedItens, listener)
+    activity?.showMultiselectDialog(title, itens, checkedItens, listener)
 }
 
 fun Context.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {

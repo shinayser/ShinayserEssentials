@@ -19,8 +19,8 @@ abstract class DataBindingAppCompatDialogFragment<T : ViewDataBinding> : AppComp
     abstract val layoutRes: Int
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mBind = DataBindingUtil.inflate(inflater!!, layoutRes, null, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        mBind = DataBindingUtil.inflate(inflater, layoutRes, null, false)
         return mBind.root
     }
 

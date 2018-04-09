@@ -18,8 +18,8 @@ abstract class DataBindingDialogFragment<T : ViewDataBinding>() : DialogFragment
 
     protected lateinit var mBind: T
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mBind = DataBindingUtil.inflate<T>(inflater!!, layoutRes, null, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        mBind = DataBindingUtil.inflate<T>(inflater, layoutRes, null, false)
         return mBind.root
     }
 

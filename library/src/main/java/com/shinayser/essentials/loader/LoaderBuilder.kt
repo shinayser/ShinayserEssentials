@@ -24,11 +24,11 @@ class LoaderBuilder<TYPE> : LoaderManager.LoaderCallbacks<TYPE> {
         return loaderCreation.invoke(id, args)
     }
 
-    override fun onLoadFinished(loader: Loader<TYPE>?, data: TYPE) {
+    override fun onLoadFinished(loader: Loader<TYPE>, data: TYPE) {
         loaderFinished?.invoke(loader, data)
     }
 
-    override fun onLoaderReset(loader: Loader<TYPE>?) {
+    override fun onLoaderReset(loader: Loader<TYPE>) {
         loaderReset?.invoke(loader)
     }
 

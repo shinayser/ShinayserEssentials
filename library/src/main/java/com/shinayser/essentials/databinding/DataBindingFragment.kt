@@ -21,7 +21,7 @@ abstract class DataBindingFragment<T : ViewDataBinding>(private var retainThisIn
         this.retainInstance = retainThisInstance
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBind = DataBindingUtil.inflate(inflater, getLayoutRes(), null, false)
         return mBind.root
     }

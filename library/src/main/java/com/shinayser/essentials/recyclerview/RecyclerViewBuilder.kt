@@ -145,12 +145,12 @@ abstract class SimpleRecyclerAdapter<ITEM, BINDER : ViewDataBinding>(
         setHasStableIds(hasStableIds)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SimpleViewHolder<BINDER> = SimpleViewHolder(View.inflate(context, viewRes, null))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleViewHolder<BINDER> = SimpleViewHolder(View.inflate(context, viewRes, null))
 
     override fun getItemCount() = list.size
 
-    override fun onBindViewHolder(holder: SimpleViewHolder<BINDER>?, position: Int) {
-        onBind(list[position], holder!!)
+    override fun onBindViewHolder(holder: SimpleViewHolder<BINDER>, position: Int) {
+        onBind(list[position], holder)
     }
 
     override fun getItemId(position: Int) = list[position]?.hashCode()?.toLong() ?: 0

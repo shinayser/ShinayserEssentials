@@ -16,7 +16,7 @@ Add to your Gradle file:
 
 Then add this to your "depedencies":
    
-    implementation 'com.github.shinayser:ShinayserEssentials:1.12.2'
+    implementation 'com.github.shinayser:ShinayserEssentials:1.13.0'
 
 
 

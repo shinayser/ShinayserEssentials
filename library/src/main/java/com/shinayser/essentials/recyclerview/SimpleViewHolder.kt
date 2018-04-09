@@ -13,7 +13,7 @@ class SimpleViewHolder<T : ViewDataBinding>(itemView: View) : RecyclerView.ViewH
         internal set
 
     init {
-        binding = DataBindingUtil.bind(itemView)
+        binding = DataBindingUtil.bind(itemView)!!
     }
 
 }
