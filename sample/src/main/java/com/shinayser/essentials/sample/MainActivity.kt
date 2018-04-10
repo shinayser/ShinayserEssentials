@@ -4,8 +4,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import androidx.core.text.bold
+import androidx.core.text.buildSpannedString
+import androidx.core.text.scale
 import com.shinayser.essentials.recyclerview.DefaultGrid
 import com.shinayser.essentials.recyclerview.init
+import com.shinayser.essentials.util.boldScale
 import com.shinayser.essentials.util.listOfRandoms
 import com.shinayser.essentials.util.optionalSerializable
 import com.shinayser.essentials.util.randomName
@@ -62,5 +66,13 @@ class MainActivity : AppCompatActivity() {
 
 	}
 }
+
+//	bold {
+//		scale(1.1f){
+//			append("Texto")
+//		}
+//	}
+//
+//}
 
 data class People(val name: String, val surname: String) : Serializable

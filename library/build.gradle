@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
-        versionName "1.13.0"
+        versionName "1.13.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,6 +50,8 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:0.10.1"
     implementation "org.jetbrains.anko:anko-support-v4-commons:0.10.1"
     implementation 'com.mcxiaoke.koi:core:0.5.4' // A lot of kotlin utils
+    implementation 'androidx.core:core-ktx:0.3'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
