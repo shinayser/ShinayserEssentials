@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 		val recyler = findViewById<RecyclerView>(R.id.recycler)
 
 		val listOfPeople = listOfRandoms(50) {
-			People(randomName(), randomName())
+			People(666, true, 'B', randomName(), randomName())
 		}
 
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
 			onBindViewHolder<People, ItemViewBinding>(R.layout.item_view, listOfPeople) { item, holder ->
-				holder.binding.textView.text = item.serialize().toString(2)
+				holder.binding.textView.text = People(-1, false, 'a', "", "").apply { deserialize(item.serialize()) }.serialize().toString(2)
 			}
 
 		}
@@ -44,4 +44,4 @@ class MainActivity : AppCompatActivity() {
 	}
 }
 
-data class People(val name: String, val surname: String) : SimpleJSONSerializable
+data class People(var id: Long, var aBoolean: Boolean, var aChar: Char = 'C', val name: String, val surname: String) : SimpleJSONSerializable
