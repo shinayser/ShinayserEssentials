@@ -21,17 +21,38 @@ interface SimpleJSONSerializable : JSONSerializable {
         return jsonOf {
 
             this@SimpleJSONSerializable::class.java.declaredFields.forEach { field ->
-                field.isAccessible = true
+
+//				if (field.name == "serialVersionUID")
+//					return@forEach
+
+				field.isAccessible = true
 
                 try {
                     when (field.type) {
 
                         Boolean::class.javaObjectType,
+                        Boolean::class.java,
+
                         Long::class.javaObjectType,
+                        Long::class.java,
+
                         Int::class.javaObjectType,
+                        Int::class.java,
+
                         Float::class.javaObjectType,
+                        Float::class.java,
+
                         Double::class.javaObjectType,
-                        String::class.javaObjectType -> field.name otopt field.get(this@SimpleJSONSerializable)
+                        Double::class.java,
+
+                        Char::class.javaObjectType,
+                        Char::class.java,
+
+                        Short::class.javaObjectType,
+						Short::class.java,
+
+                        String::class.javaObjectType,
+                        String::class.java -> field.name otopt field.get(this@SimpleJSONSerializable)
 
 
                         else -> {
