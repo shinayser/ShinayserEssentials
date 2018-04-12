@@ -22,8 +22,8 @@ interface SimpleJSONSerializable : JSONSerializable {
 
             this@SimpleJSONSerializable::class.java.declaredFields.forEach { field ->
 
-//				if (field.name == "serialVersionUID")
-//					return@forEach
+				if (field.name == "serialVersionUID")
+					return@forEach
 
 				field.isAccessible = true
 
