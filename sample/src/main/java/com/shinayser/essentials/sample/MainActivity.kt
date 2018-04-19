@@ -8,6 +8,7 @@ import com.shinayser.essentials.jsonserializer.SimpleJSONSerializable
 import com.shinayser.essentials.recyclerview.CustomSpanGrid
 import com.shinayser.essentials.recyclerview.init
 import com.shinayser.essentials.sample.databinding.ItemViewBinding
+import com.shinayser.essentials.util.fromResString
 import com.shinayser.essentials.util.listOfRandoms
 import com.shinayser.essentials.util.optionalSerializable
 import com.shinayser.essentials.util.randomName
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 		}
 
 
+		R.string.app_name.fromResString(this)
 
 		recyler.init {
 			spacing = 0
