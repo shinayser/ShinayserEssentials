@@ -8,12 +8,9 @@ import com.shinayser.essentials.jsonserializer.SimpleJSONSerializable
 import com.shinayser.essentials.recyclerview.CustomSpanGrid
 import com.shinayser.essentials.recyclerview.init
 import com.shinayser.essentials.sample.databinding.ItemViewBinding
-import com.shinayser.essentials.util.fromResString
-import com.shinayser.essentials.util.listOfRandoms
-import com.shinayser.essentials.util.optionalSerializable
-import com.shinayser.essentials.util.randomName
+import com.shinayser.essentials.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ResTrait {
 
 	private val extraString by optionalSerializable<People>("extraPeople")
 
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 		}
 
 
-		R.string.app_name.fromResString(this)
+		R.string.app_name.stringRes()
 
 		recyler.init {
 			spacing = 0
@@ -37,7 +34,8 @@ class MainActivity : AppCompatActivity() {
 
 
 			onBindViewHolder<People, ItemViewBinding>(R.layout.item_view, listOfPeople) { item, holder ->
-				holder.binding.textView.text = People(-1, false, 'a', "", "").apply { deserialize(item.serialize()) }.serialize().toString(2)
+//				holder.binding.textView.text = People(-1, false, 'a', "", "").apply { deserialize(item.serialize()) }.serialize().toString(2)
+				holder.binding.textView.text = R.string.app_name.stringRes()
 			}
 
 		}

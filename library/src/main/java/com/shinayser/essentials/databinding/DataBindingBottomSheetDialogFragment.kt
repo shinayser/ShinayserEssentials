@@ -1,5 +1,6 @@
 package com.shinayser.essentials.databinding
 
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
@@ -7,12 +8,14 @@ import android.support.design.widget.BottomSheetDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.shinayser.essentials.util.ResTrait
 
 /**
  * Created by Daniel Oliveira on 18/11/2016.
  */
 
-abstract class DataBindingBottomSheetDialogFragment<T : ViewDataBinding> : BottomSheetDialogFragment() {
+abstract class DataBindingBottomSheetDialogFragment<T : ViewDataBinding> : BottomSheetDialogFragment(), ResTrait {
+    override fun getApplicationContext(): Context = activity!!.applicationContext
 
     protected lateinit var mBind: T
 
