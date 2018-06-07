@@ -15,7 +15,7 @@ import com.shinayser.essentials.util.ResTrait
  */
 
 abstract class DataBindingBottomSheetDialogFragment<T : ViewDataBinding> : BottomSheetDialogFragment(), ResTrait {
-    override fun getContext(): Context = activity!!.applicationContext
+    override fun getContext(): Context = activity!!
 
     protected lateinit var mBind: T
 
