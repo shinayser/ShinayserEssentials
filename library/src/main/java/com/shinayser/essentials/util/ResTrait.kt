@@ -7,6 +7,7 @@ interface ResTrait {
 	fun getContext(): Context
 
 	fun Int.stringRes() = getContext().resources.getString(this)
+	fun Int.stringRes(vararg formatArgs: Any) = getContext().resources.getString(this, formatArgs)
 	fun Int.stringArrayRes() = getContext().resources.getStringArray(this)
 	fun Int.intRes() = getContext().resources.getInteger(this)
 	fun Int.intArrayRes() = getContext().resources.getIntArray(this)
