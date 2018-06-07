@@ -4,15 +4,15 @@ import android.content.Context
 
 interface ResTrait {
 
-	fun getApplicationContext(): Context
+	fun getContext(): Context
 
-	fun Int.stringRes() = getApplicationContext().resources.getString(this)
-	fun Int.stringArrayRes() = getApplicationContext().resources.getStringArray(this)
-	fun Int.intRes() = getApplicationContext().resources.getInteger(this)
-	fun Int.intArrayRes() = getApplicationContext().resources.getIntArray(this)
-	fun Int.booleanRes() = getApplicationContext().resources.getBoolean(this)
-	fun Int.colorRes() = getApplicationContext().resources.getColor(this)
-	fun Int.dimensionRes() = getApplicationContext().resources.getDimension(this)
-	fun Int.drawableRes() = getApplicationContext().resources.getDrawable(this)
+	fun Int.stringRes() = getContext().resources.getString(this)
+	fun Int.stringArrayRes() = getContext().resources.getStringArray(this)
+	fun Int.intRes() = getContext().resources.getInteger(this)
+	fun Int.intArrayRes() = getContext().resources.getIntArray(this)
+	fun Int.booleanRes() = getContext().resources.getBoolean(this)
+	fun Int.colorRes() = getContext().resources.getColor(this)
+	fun Int.dimensionRes() = getContext().resources.getDimension(this)
+	fun Int.drawableRes() = getContext().resources.getDrawable(this)
 
 }
