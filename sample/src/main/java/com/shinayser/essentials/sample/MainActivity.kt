@@ -1,5 +1,6 @@
 package com.shinayser.essentials.sample
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.shinayser.essentials.sample.databinding.ItemViewBinding
 import com.shinayser.essentials.util.*
 
 class MainActivity : AppCompatActivity(), ResTrait {
+	override fun getContext(): Context = applicationContext
 
 	private val extraString by optionalSerializable<People>("extraPeople")
 

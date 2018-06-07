@@ -17,7 +17,7 @@ import com.shinayser.essentials.util.ResTrait
  */
 
 abstract class DataBindingDialogFragment<T : ViewDataBinding>() : DialogFragment(), ResTrait {
-	override fun getApplicationContext(): Context = activity!!.applicationContext
+	override fun getContext(): Context = activity!!.applicationContext
 
 
 	protected lateinit var mBind: T
