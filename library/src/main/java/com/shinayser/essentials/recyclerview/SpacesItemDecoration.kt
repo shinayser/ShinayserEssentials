@@ -1,15 +1,15 @@
 package com.shinayser.essentials.recyclerview
 
 import android.graphics.Rect
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
 /**
  * Created by Daniel Oliveira on 26/02/2016.
  */
-open class SpacesItemDecoration(private val space: Int) : RecyclerView.ItemDecoration() {
+open class SpacesItemDecoration(private val space: Int) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
 
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State?) {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
 
         outRect.left = space / 2
         outRect.right = space / 2

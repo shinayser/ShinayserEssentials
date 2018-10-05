@@ -1,28 +1,25 @@
 package com.shinayser.essentials.util
 
-import android.R
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
-import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AlertDialog
 import org.jetbrains.anko.bundleOf
 
 /**
  * Created by Daniel Oliveira on 10/11/2017.
  */
 //Fragment creation
-fun Context.fragmentOf(fragmentName: String, bundle: Bundle? = null): Fragment = Fragment.instantiate(this, fragmentName, bundle)
+fun Context.fragmentOf(fragmentName: String, bundle: Bundle? = null): androidx.fragment.app.Fragment = androidx.fragment.app.Fragment.instantiate(this, fragmentName, bundle)
 fun Context.fragmentOf(fragmentName: String, vararg pairs: Pair<String, Any>) = fragmentOf(fragmentName, bundleOf(*pairs))
 inline fun <reified T> Context.fragmentOf(vararg pairs: Pair<String, Any>): T = fragmentOf(T::class.java.name, bundleOf(*pairs)) as T
 inline fun <reified T> Context.fragmentOf(bundle: Bundle? = null): T = fragmentOf(T::class.java.name, bundle) as T
-fun Fragment.fragmentOf(fragmentName: String, bundle: Bundle? = null): Fragment = Fragment.instantiate(activity, fragmentName, bundle)
-fun Fragment.fragmentOf(fragmentName: String, vararg pairs: Pair<String, Any>) = fragmentOf(fragmentName, bundleOf(*pairs))
-inline fun <reified T> Fragment.fragmentOf(vararg pairs: Pair<String, Any>): T = fragmentOf(T::class.java.name, bundleOf(*pairs)) as T
-inline fun <reified T> Fragment.fragmentOf(bundle: Bundle? = null): T = fragmentOf(T::class.java.name, bundle) as T
+fun androidx.fragment.app.Fragment.fragmentOf(fragmentName: String, bundle: Bundle? = null): androidx.fragment.app.Fragment = androidx.fragment.app.Fragment.instantiate(activity, fragmentName, bundle)
+fun androidx.fragment.app.Fragment.fragmentOf(fragmentName: String, vararg pairs: Pair<String, Any>) = fragmentOf(fragmentName, bundleOf(*pairs))
+inline fun <reified T> androidx.fragment.app.Fragment.fragmentOf(vararg pairs: Pair<String, Any>): T = fragmentOf(T::class.java.name, bundleOf(*pairs)) as T
+inline fun <reified T> androidx.fragment.app.Fragment.fragmentOf(bundle: Bundle? = null): T = fragmentOf(T::class.java.name, bundle) as T
 
 //Preferences
 fun Context.getStringPreference(preference: String, defaultValue: String? = null): String? = PreferenceManager.getDefaultSharedPreferences(this).getString(preference, defaultValue)

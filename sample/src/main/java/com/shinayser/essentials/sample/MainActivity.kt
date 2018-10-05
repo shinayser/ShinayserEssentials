@@ -3,8 +3,8 @@ package com.shinayser.essentials.sample
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.shinayser.essentials.jsonserializer.SimpleJSONSerializable
 import com.shinayser.essentials.recyclerview.CustomSpanGrid
 import com.shinayser.essentials.recyclerview.init
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), ResTrait {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 
-		val recyler = findViewById<RecyclerView>(R.id.recycler)
+		val recyler = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler)
 
 		val listOfPeople = listOfRandoms(50) {
 			People(666, true, 'B', randomName(), randomName())

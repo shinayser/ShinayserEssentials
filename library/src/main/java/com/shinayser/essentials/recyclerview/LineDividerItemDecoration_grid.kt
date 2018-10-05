@@ -4,11 +4,11 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
-class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : RecyclerView.ItemDecoration() {
+class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
 
     private var mOrientation: Int = 0
 
@@ -25,7 +25,7 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
         mOrientation = orientation
     }
 
-    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+    override fun onDrawOver(c: Canvas, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
 
         when (mOrientation) {
 //            VERTICAL_LIST -> drawVertical(c, parent)
@@ -37,7 +37,7 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
         }
     }
 
-    private fun drawVertical(c: Canvas, parent: RecyclerView) {
+    private fun drawVertical(c: Canvas, parent: androidx.recyclerview.widget.RecyclerView) {
         if (parent.childCount == 0) return
 
         val left = parent.paddingLeft
@@ -46,7 +46,7 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
         val child = parent.getChildAt(0)
         if (child.height == 0) return
 
-        val params = child.layoutParams as RecyclerView.LayoutParams
+        val params = child.layoutParams as androidx.recyclerview.widget.RecyclerView.LayoutParams
         var top = child.bottom + params.bottomMargin + divider.intrinsicHeight
         var bottom = top + divider.intrinsicHeight
 
@@ -60,14 +60,14 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
         }
     }
 
-    private fun drawHorizontal(c: Canvas, parent: RecyclerView) {
+    private fun drawHorizontal(c: Canvas, parent: androidx.recyclerview.widget.RecyclerView) {
         val top = parent.paddingTop
         val bottom = parent.height - parent.paddingBottom
 
         val childCount = parent.childCount
         for (i in 0 until childCount) {
             val child = parent.getChildAt(i)
-            val params = child.layoutParams as RecyclerView.LayoutParams
+            val params = child.layoutParams as androidx.recyclerview.widget.RecyclerView.LayoutParams
             val left = child.right + params.rightMargin + divider.intrinsicHeight
             val right = left + divider.intrinsicWidth
             divider.setBounds(left, top, right, bottom)
@@ -75,7 +75,7 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
         }
     }
 
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State?) {
+    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
 //        if (mOrientation == VERTICAL_LIST) {
 //            outRect.set(0, 0, 0, divider.intrinsicHeight)
 //        } else
@@ -89,7 +89,7 @@ class LineDividerItemDecoration_grid(context: Context, val divider: Drawable) : 
     companion object {
 //        private val ATTRS = intArrayOf(android.R.attr.listDivider)
 
-        val HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL
+        val HORIZONTAL_LIST = androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
         //        val VERTICAL_LIST = LinearLayoutManager.VERTICAL
         val GRID = 2
     }

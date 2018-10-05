@@ -1,12 +1,11 @@
 package com.shinayser.essentials.util
 
 import android.app.Activity
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.os.Parcelable
-import android.support.v4.app.*
-import org.jetbrains.anko.bundleOf
+import androidx.core.os.bundleOf
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
 /**
  * Created by Daniel Oliveira on 10/11/2017.
@@ -14,6 +13,7 @@ import org.jetbrains.anko.bundleOf
 
 //Delegates
 fun Activity.extraString(key: String) = lazy { if (intent.extras.containsKey(key)) intent.extras.getString(key) else null!! }
+
 fun Activity.extraBoolean(key: String) = lazy { if (intent.extras.containsKey(key)) intent.extras.getBoolean(key) else null!! }
 fun Activity.extraDouble(key: String) = lazy { if (intent.extras.containsKey(key)) intent.extras.getDouble(key) else null!! }
 fun Activity.extraLong(key: String) = lazy { if (intent.extras.containsKey(key)) intent.extras.getLong(key) else null!! }
@@ -29,14 +29,14 @@ fun Activity.optionalBundle(key: String) = lazy { intent.extras?.getBundle(key) 
 fun <T : Parcelable> Activity.optionalParcelable(key: String) = lazy { intent.extras?.getParcelable<T>(key) }
 fun <T> Activity.optionalSerializable(key: String) = lazy { intent.extras?.getSerializable(key) as? T }
 
-inline fun <reified T : DialogFragment> FragmentActivity.showDialogFragment(vararg pairs: Pair<String, Any>) {
-    showDialogFragment<T>(bundleOf(*pairs))
+inline fun <reified T : androidx.fragment.app.DialogFragment> androidx.fragment.app.FragmentActivity.showDialogFragment(vararg pairs: Pair<String, Any>) {
+	showDialogFragment<T>(bundleOf(*pairs))
 }
 
-inline fun <reified T : DialogFragment> FragmentActivity.showDialogFragment(bundle: Bundle? = null) {
-    fragmentOf<T>(bundle).show(supportFragmentManager, T::class.java.name)
+inline fun <reified T : androidx.fragment.app.DialogFragment> androidx.fragment.app.FragmentActivity.showDialogFragment(bundle: Bundle? = null) {
+	fragmentOf<T>(bundle).show(supportFragmentManager, T::class.java.name)
 }
 
 fun <T : ViewDataBinding> Activity.bindContentView(res: Int): T {
-    return DataBindingUtil.setContentView(this, res)
+	return DataBindingUtil.setContentView(this, res)
 }

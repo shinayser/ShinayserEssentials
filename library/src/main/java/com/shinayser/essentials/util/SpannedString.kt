@@ -1,6 +1,6 @@
 package com.shinayser.essentials.util
 
-import android.support.annotation.ColorInt
+import androidx.annotation.ColorInt
 import android.text.SpannableStringBuilder
 import androidx.core.text.*
 

@@ -3,14 +3,14 @@ package com.shinayser.essentials.util
 import android.R
 import android.content.Context
 import android.content.DialogInterface
-import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AlertDialog
 import android.widget.ArrayAdapter
 
 /**
  * Created by Daniel Oliveira on 19/12/2017.
  */
-fun Fragment.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
+fun androidx.fragment.app.Fragment.showMultiselectDialog(title: String? = null, itens: Array<String>, checkedItens: BooleanArray?, listener: (dialog: DialogInterface, which: Int, isChecked: Boolean) -> Unit) {
     activity?.showMultiselectDialog(title, itens, checkedItens, listener)
 }
 

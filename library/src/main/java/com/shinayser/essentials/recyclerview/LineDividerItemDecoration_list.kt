@@ -3,14 +3,14 @@ package com.shinayser.essentials.recyclerview
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Created by Daniel Oliveira on 26/02/2016.
  */
-open class LineDividerItemDecoration_list(context: Context, val separator: Drawable) : RecyclerView.ItemDecoration() {
+open class LineDividerItemDecoration_list(context: Context, val separator: Drawable) : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
 
-    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+    override fun onDrawOver(c: Canvas, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
         val left = parent.paddingLeft
         val right = parent.width - parent.paddingRight
 
@@ -18,7 +18,7 @@ open class LineDividerItemDecoration_list(context: Context, val separator: Drawa
         for (i in 0 until childCount) {
             val child = parent.getChildAt(i)
 
-            val params = child.layoutParams as RecyclerView.LayoutParams
+            val params = child.layoutParams as androidx.recyclerview.widget.RecyclerView.LayoutParams
 
             val top = child.bottom + params.bottomMargin
             val bottom = top + separator.intrinsicHeight

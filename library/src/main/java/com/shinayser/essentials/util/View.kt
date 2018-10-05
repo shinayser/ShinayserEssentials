@@ -3,9 +3,9 @@ package com.shinayser.essentials.util
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.animation.TimeInterpolator
-import android.support.design.widget.FloatingActionButton
-import android.support.v7.widget.SwitchCompat
-import android.support.v7.widget.Toolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.widget.SwitchCompat
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.*
 
